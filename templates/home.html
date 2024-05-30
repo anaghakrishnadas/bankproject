@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css" />
+  <title>BankingSystem</title>
+  <style>
+    :root {
+      --color-primary: #0073ff;
+      --color-white: #e9e9e9;
+      --color-black: #141d28;
+      --color-black-1: #212b38;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {  
+      font-family: sans-serif;
+    }
+
+    .logo {
+      color: var(--color-white);
+      font-size: 30px;
+    }
+
+    .logo span {
+      color: var(--color-primary);
+    }
+
+    .menu-bar {
+      background-color: var(--color-black);
+      height: 80px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 5%;
+      position: relative;
+    }
+
+    .menu-bar ul {
+      list-style: none;
+      display: flex;
+    }
+
+    .menu-bar ul li {
+      padding: 10px 30px;
+      position: relative;
+    }
+
+    .menu-bar ul li a {
+      font-size: 20px;
+      color: var(--color-white);
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .menu-bar ul li a:hover {
+      color: var(--color-primary);
+    }
+
+    .fas {
+      float: right;
+      margin-left: 10px;
+      padding-top: 3px;
+    }
+
+    .dropdown-menu {
+      display: none;
+    }
+
+    .menu-bar ul li:hover .dropdown-menu {
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 100%;
+      background-color: var(--color-black);
+    }
+
+    .menu-bar ul li:hover .dropdown-menu ul {
+      display: block;
+      margin: 10px;
+    }
+
+    .menu-bar ul li:hover .dropdown-menu ul li {
+      width: 150px;
+      padding: 10px;
+    }
+
+    .dropdown-menu-1 {
+      display: none;
+    }
+
+    .dropdown-menu ul li:hover .dropdown-menu-1 {
+      display: block;
+      position: absolute;
+      left: 150px;
+      top: 0;
+      background-color: var(--color-black);
+    }
+
+    .hero {
+      height: calc(100vh - 80px);
+      background-image: url('https://cdn4.vectorstock.com/i/1000x1000/65/08/queue-in-bank-vector-32716508.jpg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .footer {
+      background-color: var(--color-black);
+      color: var(--color-white);
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .footer .footer-content {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 5%;
+    }
+
+    .footer .footer-content p {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .footer .socials {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .footer .socials li {
+      margin: 0 10px;
+    }
+
+    .footer .socials li a {
+      color: var(--color-white);
+      font-size: 18px;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer .socials li a:hover {
+      color: var(--color-primary);
+    }
+  </style>
+</head>
+<body>
+  <div class="menu-bar">
+    <h1 class="logo">Banking<span>System</span></h1>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="{% url 'bank:about' %}">About</a></li>
+      <li>
+        <a href="#">Branches <i class="fas fa-caret-down"></i></a>
+        <div class="dropdown-menu">
+          <ul>
+            <li><a href="#" onclick="redirectToWikipedia('Kozhikode')">Kozhikode</a></li>
+            <li><a href="#" onclick="redirectToWikipedia('Kochi')">Kochi</a></li>
+            <li><a href="#" onclick="redirectToWikipedia('Trivandrum')">Trivandrum</a></li>
+            <li><a href="#" onclick="redirectToWikipedia('Thrissur')">Thrissur</a></li>
+            <li><a href="#" onclick="redirectToWikipedia('Kannur')">Kannur</a></li>
+            
+          </ul>
+        </div>
+      </li>
+      <li><a href="{% url 'bank:signup' %}">Register</a></li>
+      <li><a href="{% url 'bank:login' %}">Login</a></li>
+      <li><a href="{% url 'bank:logout' %}">Logout</a></li>
+    </ul>
+  </div>
+
+  <div class="hero">
+    &nbsp;
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2024 BankingSystem. All rights reserved.</p>
+      <ul class="socials">
+        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    function redirectToWikipedia(district) {
+      var wikipediaUrls = {
+        "Kozhikode": "https://en.wikipedia.org/wiki/Kozhikode",
+        "Kochi": "https://en.wikipedia.org/wiki/Kochi",
+        "Trivandrum": "https://en.wikipedia.org/wiki/Thiruvananthapuram",
+        "Thrissur": "https://en.wikipedia.org/wiki/Thrissur",
+        "Kannur": "https://en.wikipedia.org/wiki/Kannur"
+      };
+
+      var url = wikipediaUrls[district];
+      if (url) {
+        window.location.href = url;
+      } else {
+        console.error("Wikipedia URL not found for district: " + district);
+      }
+    }
+  </script>
+</body>
+</html>

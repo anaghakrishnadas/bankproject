@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+    .container{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,50,0.8), rgba(0,0,50,0.8)), url('https://c8.alamy.com/comp/W1EPR1/flat-design-retro-bank-building-with-columns-and-windows-vector-illustration-isolated-on-white-background-W1EPR1.jpg');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.form-b{
+    width: 90%;
+    max-width: 550px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 50px 60px 70px;
+    text-align: center;
+}
+
+.form-b h1{
+    font-size: 30px;
+    margin-bottom: 60px;
+    color: #3c00a0;
+    position: relative;
+}
+
+.input-fild{
+    background: #eaeaea;
+    margin: 15px 0;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+}
+
+input{
+    width: 100%;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    padding: 18px 15px;
+}
+
+.input-fild{
+    margin-left: 15px;
+    color: #999;
+}
+
+.btn-fild{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    text-align: center;
+}
+
+.btn-fild button{
+    flex-basis: 40%;
+    background: #3c00a0;
+    color: #fff;
+    height: 40px;
+    border-radius: 20px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+
+}
+
+</style>
+<body>
+<div class="container">
+ 
+  <div class="form-b">
+    <form method="post">
+      {% csrf_token %}
+      <h1>LOGIN</h1>
+      <div class="input-fild">
+        <i class="fa-solid fa-user"></i>
+        <input type="text" placeholder="Username" id="email" name="username">
+      </div>
+
+      <div class="input-fild">
+        <i class="fa-solid fa-lock"></i>
+        <input type="password" placeholder="Password" id="psw" name="password">
+      </div>
+      
+      <div class="btn-fild">
+        <button type="submit">Login</button>
+        <a href="{% url 'bank:signup' %}" >Create a account</a>
+      </div>
+    </form>
+  </div>
+</div>
+</body>
+</html>
+

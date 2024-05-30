@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Form</title>
+	<meta charset="utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<style>
+		.button-spacing{
+			margin-left: 50px;
+		}
+	</style>
+</head>
+<body>
+	<h1 class="text-success text-center">CUSTOMER FORM</h1>
+
+	<div class="container">
+		<form action="{% url 'bank:form' %}" method="post">
+			{% csrf_token %}
+			<div class="form-group">
+				<label for="name">Name:</label>
+				<input type="text" class="form-control" id="name"
+					placeholder="Enter your Name" name="name">
+			</div>
+
+			<div class="form-group">
+				<label for="dob">Date of Birth:</label>
+				<input type="date" class="form-control" id="dob"
+					placeholder="Enter your date" name="dob">
+			</div>
+
+			<div class="form-group">
+				<label for="age">Age:</label>
+				<input type="text" class="form-control" id="age"
+					placeholder="Enter your age" name="age">
+			</div>
+
+			<div class="form-group">
+                <label for="gender">Gender:</label>
+                <select class="form-control" id="gender" name="gender">
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+			<div class="form-group">
+				<label for="contact">Contact No:</label>
+				<input type="text" class="form-control" id="contact"
+					placeholder="Enter your Number" name="contact">
+			</div>
+
+			<div class="form-group">
+				<label for="email">Email:</label>
+				<input type="email" class="form-control" id="email"
+					placeholder="Enter your Email" name="email">
+			</div>
+
+			<div class="form-group">
+				<label for="address">Address:</label>
+				<input type="text" class="form-control" id="address"
+					placeholder="Enter your address" name="address">
+			</div>
+
+			<div class="form-group">
+                <label for="district">District:</label>
+                <select class="form-control" id="district" name="district">
+					<option value="">Select your District</option>
+                    <option value="">Kasargod</option>
+				    <option value="">Kannur</option>
+					<option value="">Wayanad</option>
+					<option value="">Kozhikode</option>
+					<option value="">Malappuram</option>
+					<option value="">Palakkad</option>
+					<option value="">Thrissur</option>
+					<option value="">Ernakulam</option>
+					<option value="">Idukki</option>
+					<option value="">Kottayam</option>
+					<option value="">Alappuzha</option>
+					<option value="">Pathanamthitta</option>
+					<option value="">Kollam</option>
+					<option value="">Trivandrum</option>
+				
+                </select>
+            </div>
+			
+			<div class="form-group">
+                <label for="branch">Branch:</label>
+                <select class="form-control" id="branch" name="branch">
+                    <option value="">Select your branch</option>
+                    <option value="">Neeleshwaram</option>
+                <option value="">Kanjangad</option>
+                <option value="">Bekkal</option>
+				<option value="">Koothuparamb</option>
+                <option value="">Thavakkara</option>
+				<option value="">Vythiri</option>
+                <option value="">Meppadi</option>
+                <option value="">Sulthan Batheri</option>
+				<option value="">Mankav</option>
+                <option value="">Pantheerankav</option>
+                <option value="">Beypore</option>
+                <option value="">Meenchantha</option>
+                <option value="">Parappanagadi</option>
+                <option value="">Kottakadav</option>
+                <option value="">Thirur</option>
+                <option value="">Nemmara</option>
+                <option value="">Vadakkencherry</option>
+                <option value="">Pattambi</option>
+                <option value="">Ollur</option>
+                <option value="">Chembukkavu</option>
+                <option value="">Vyttila</option>
+                <option value="">Kakkanad</option>
+                <option value="">Marine Drive</option>
+                <option value="">Kattappana</option>
+                <option value="">Thodupuzha</option>
+                <option value="">Pala</option>
+                <option value="">Changanassery</option>
+                <option value="">Ettumanoor</option>
+                <option value="">Vaikom</option>
+                <option value="">Cherthala</option>
+                <option value="">Mavelikkara</option>
+                <option value="">Chengannur</option>
+                <option value="">Thiruvalla</option>
+                <option value="">Kozhencherry</option>
+                <option value="">Paravoor</option>
+                <option value="">Kottarakara</option>
+                <option value="">Neyyattinkara</option>
+                <option value="">Nedumangadu</option>
+                <option value="">Varkala</option>
+                <option value="">Kowdiar</option>
+                </select>
+            </div>
+
+			<div class="form-group">
+                <label for="a/c">Account Type:</label>
+                <select class="form-control" id="a/c" name="a/c">
+                    <option value="">Select your Account</option>
+                    <option value="savings">Savings Account</option>
+                    <option value="current">Current Account</option>
+                    <option value="salary">Salary Account</option>
+					<option value="fd">FD Account</option>
+					<option value="nri">NRI Account</option>
+                </select>
+            </div>
+
+			<div class="form-group">
+				<label>Materials Provided:</label>
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" id="debit_card" name="materials[]" value="debit_card">
+					<label class="form-check-label" for="debit_card">Debit Card</label>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" id="credit_card" name="materials[]" value="credit_card">
+					<label class="form-check-label" for="credit_card">Credit Card</label>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" id="cheque_book" name="materials[]" value="cheque_book">
+					<label class="form-check-label" for="cheque_book">Cheque Book</label>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" id="pass_book" name="materials[]" value="pass_book">
+					<label class="form-check-label" for="pass_book">PassBook</label>
+				</div>
+			</div>
+
+			<button type="submit" class="btn bg-success">Submit</button>
+			<a href="{% url 'bank:logout' %}" class="btn bg-danger button-spacing">Logout</a>
+			
+		</form>
+	</div>
+</body>
+</html>

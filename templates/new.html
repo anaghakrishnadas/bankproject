@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        .login-message {
+            color: green;
+            font-style: italic;
+        }
+        .heading{
+			margin-top: 50px;
+		}
+    </style>
+</head>
+<body>
+    
+    <div class="container mt-5">
+        <h3 class="text-center login-message">You have successfully logged in</h3>
+        <h1 class="text-center heading">Welcome to Our Bank</h1>
+        <p class="text-center">Your trusted partner in financial services.</p>
+
+        <div class="text-center mt-4">
+            <img src="https://img.freepik.com/premium-photo/welcome-hands-handshake-closeup-by-business-people-office-interview-meeting-recruitment-zoom-b2b-team-with-shaking-hands-emoji-crm-consulting-integration-partnership_590464-168976.jpg" class="img-fluid" alt="Welcoming Photo">
+        </div>
+        <div class="text-center mt-4">
+            <a href="{% url 'bank:form' %}" class="btn btn-primary">Click Here</a>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+

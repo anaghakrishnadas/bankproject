@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        .back{
+			margin-top: 100px;
+		}
+    </style>
+</head>
+<body>
+    
+    <div class="container mt-5">
+        <h1 class="text-center heading">Your application is accepted...!</h1>
+
+        <div class="text-center mt-4">
+            <img src="https://e7.pngegg.com/pngimages/485/477/png-clipart-check-mark-computer-icons-green-check-circle-angle-text-thumbnail.png" class="img-fluid" alt="Welcoming Photo">
+        </div>
+
+        <div class="text-center back">
+            <a href="{% url 'bank:home' %}" class="btn btn-primary button-spacing">Back to Homepage</a>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
